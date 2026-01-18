@@ -1,1 +1,144 @@
-# roblox-cv
+[Roblox CV.txt](https://github.com/user-attachments/files/24695582/Roblox.CV.txt)
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mine Roblox Skills</title>
+  <style>
+    :root {
+      --bg: #111;
+      --card: #1a1a1a;
+      --accent: #00a2ff;
+      --text: #eee;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--accent);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .card {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: auto;
+    }
+    .tag {
+      background: var(--accent);
+      color: #000;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+    a {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hej, jeg er [DIT NAVN]</h1>
+    <p>Roblox-udvikler · Scripter · Builder</p>
+  </header>
+
+  <section>
+    <h2>Mine projekter</h2>
+    <div class="grid" id="projekter"></div>
+  </section>
+
+  <footer>
+    Kontakt: <a href="mailto:din@email.dk">din@email.dk</a> |
+    Discord: DitBrugernavn#1234
+  </footer>
+
+  <script>
+    const projekter = [
+      {
+        titel: "Speed Simulator X",
+        beskrivelse: "Et hurtigt-paced simulator-spil med rebirths og opgraderinger.",
+        billede: "https://via.placeholder.com/400x160/00a2ff/ffffff?text=Speed+Simulator+X",
+        færdigheder: ["Lua", "UI Design", "Datastores"]
+      },
+      {
+        titel: "Obby Adventure",
+        beskrivelse: "55 unikke levels med checkpoints og parkour-mekanikker.",
+        billede: "https://via.placeholder.com/400x160/00a2ff/ffffff?text=Obby+Adventure",
+        færdigheder: ["Level Design", "Lua", "Tweens"]
+      },
+      {
+        titel: "Gun-Game Framework",
+        beskrivelse: "Modulært våbensystem med hit detection og skins.",
+        billede: "https://via.placeholder.com/400x160/00a2ff/ffffff?text=Gun+Framework",
+        færdigheder: ["OOP", "Raycast", "Modules"]
+      }
+    ];
+
+    const container = document.getElementById("projekter");
+    projekter.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${p.billede}" alt="${p.titel}">
+        <h3>${p.titel}</h3>
+        <p>${p.beskrivelse}</p>
+        <div class="tags">${p.færdigheder.map(t=>`<span class="tag">${t}</span>`).join("")}</div>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
